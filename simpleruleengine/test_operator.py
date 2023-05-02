@@ -21,6 +21,9 @@ class TestOperator(TestCase):
     def test_evaluate_in_true(self):
         assert In("dog", "cat").evaluate("dog") is True
 
+    def test_evaluate_in_list_true(self):
+        assert In("dog", "cat").evaluate(["dog", "cat"]) is True
+
     def test_evaluate_boolean_true(self):
         assert BooleanOperator(True).evaluate(True) is True
 

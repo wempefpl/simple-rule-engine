@@ -6,4 +6,6 @@ class In(StringOperator):
         super().__init__(base_value)
 
     def evaluate(self, value_to_evaluate):
+        if isinstance(value_to_evaluate, list):
+            return set(self.base_value) == set(value_to_evaluate)
         return value_to_evaluate in self.base_value
